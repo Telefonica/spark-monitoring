@@ -138,6 +138,15 @@
     <dependencies>
     </dependencies>
     <build>
+
+        <extensions>
+            <extension>
+                <groupId>com.gkatzioura.maven.cloud</groupId>
+                <artifactId>s3-storage-wagon</artifactId>
+                <version>1.8</version>
+            </extension>
+        </extensions>
+
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -411,4 +420,16 @@
             <!--</plugin>-->
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>public-maven-4p</id>
+            <url>s3://4p-public-artifacts/baikal/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>public-maven-4p</id>
+            <url>s3://4p-public-artifacts/baikal/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 </project>
